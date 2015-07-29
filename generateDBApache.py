@@ -5,10 +5,9 @@ import pymongo
 import re
 import sys
 from pymongo import MongoClient
-from logParser import LogParser
 
 
-parser = argparse.ArgumentParser(description='Store Log info into db.')
+parser = argparse.ArgumentParser(description='Store test result info into db.')
 
 #parser.add_argument('--log', help='Name of the log file', type=str, required=True )
 parser.add_argument('--input', help='File that contains the test info', type=str, required=True )
@@ -18,7 +17,6 @@ parser.add_argument('--db', help='Name of DB.',  type=str, required=True)
 args = parser.parse_args()
 
 
-logParser = LogParser()
 
 def generateDB():
     filesInDB = open('.filesInDBApache', 'a')
